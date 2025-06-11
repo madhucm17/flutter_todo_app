@@ -1,16 +1,6 @@
-# flutter_todo
 
-A new Flutter project.
 
-## Getting Started
+#Simple todo android and ios application using Flutter
 
-This project is a starting point for a Flutter application.
+https://github.com/user-attachments/assets/d9085c1e-eb06-48c5-b8bf-2d6ae583b6b1
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
