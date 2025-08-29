@@ -22,7 +22,7 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      # 3. Setup Flutter (matching Dart SDK version ^3.8.1)
+      # 3. Setup Flutter (matching Dart SDK version)
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -32,12 +32,12 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      # 5. Run Flutter tests
+      # 5. Run tests (currently empty, won't fail)
       - name: Run tests
         run: flutter test
-        continue-on-error: true   # ✅ prevents CI failure if test fails
+        continue-on-error: true   # ensures build continues even if tests fail
 
-      # 6. Build Android app (.apk)
+      # 6. Build APK
       - name: Build release APK
         run: flutter build apk --release
 
