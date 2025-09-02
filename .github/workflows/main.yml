@@ -40,3 +40,10 @@ jobs:
         with:
           name: android-build
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Deploy with Fastlane
+        run: |
+          cd android
+          fastlane deploy_android
+        env:
+          GOOGLE_PLAY_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
