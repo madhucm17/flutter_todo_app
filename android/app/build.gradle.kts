@@ -1,3 +1,16 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+val versionPropertiesFile = rootProject.file("android/version.properties")
+val versionProperties = Properties()
+if (versionPropertiesFile.exists()) {
+    versionProperties.load(FileInputStream(versionPropertiesFile))
+}
+
+val flutterVersionCode = versionProperties.getProperty("flutter.versionCode")?.toInt() ?: 1
+val flutterVersionName = versionProperties.getProperty("flutter.versionName") ?: "1.0"
+
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
