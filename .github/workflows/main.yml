@@ -44,6 +44,6 @@ jobs:
       - name: Deploy with Fastlane
         run: |
           cd android
-          fastlane deploy_android
+          fastlane deploy
         env:
           GOOGLE_PLAY_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
