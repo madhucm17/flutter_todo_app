@@ -31,11 +31,16 @@ platform :android do
       project_dir: "./"
     )
   end
+  desc "Build a release APK/AAB without uploading"
+    lane :deploy do
+     # 1. Build the AAB instead of APK
+     gradle(task: "bundle", build_type: "Release")
 
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store
-  end
+     # 2. Upload using GitHub Secret (json_key_data instead of json_key)
+     upload_to_play_store(
+       track: "internal", # can be internal, alpha, beta, production
+       json_key_data: ENV["GOOGLE_PLAY_SERVICE_ACCOUNT"]
+     )
+   end
 end
 
